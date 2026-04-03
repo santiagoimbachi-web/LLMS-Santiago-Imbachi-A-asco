@@ -1,0 +1,10 @@
+El Problema:
+Se busca predecir el consumo de energía basándose en la temperatura, pero se sospecha que la relación es cuadrática.
+
+Tu Misión:
+Escribe una función llamada entrenar_modelo_energia(df, x_col, y_col) que:
+1. Cree una nueva columna llamada 'x_cuadrada' que sea el cuadrado de la columna x_col.
+2. Defina la matriz de características X con las columnas [x_col, 'x_cuadrada'] y el vector objetivo y con y_col.
+3. Entrene un modelo de LinearRegression de sklearn.
+4. Calcule las predicciones para el conjunto de datos de entrenamiento.
+5. Devuelva un diccionario con tres llaves: 'coeficientes' (los coefs del modelo), 'intercepto' (el bias) y 'r2' (el score R-cuadrado).

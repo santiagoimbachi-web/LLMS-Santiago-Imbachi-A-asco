@@ -1,0 +1,10 @@
+El Problema:
+En una planta industrial, los sensores de temperatura a veces presentan fallos que generan lecturas imposibles. Debes limpiar estos datos basándote en la desviación estándar para no sesgar los análisis posteriores.
+
+Tu Misión:
+Escribe una función llamada filtrar_anomalias_sensores(df, col_sensor) que:
+1. Calcule la media (mu) y la desviación estándar (sigma) de la columna col_sensor únicamente para los valores que NO son nulos.
+2. Identifique como "lecturas válidas" aquellas que están dentro del rango [mu - 2*sigma, mu + 2*sigma].
+3. Reemplace cualquier valor en col_sensor que esté fuera de ese rango (anomalía) por el valor de la media (mu) calculada en el paso 1.
+4. Los valores que originalmente eran NaN deben permanecer como NaN.
+5. Devuelva el DataFrame modificado y un diccionario con las llaves 'media' y 'desviacion' redondeadas a 2 decimales.

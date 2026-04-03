@@ -1,0 +1,13 @@
+El Problema:
+Una empresa de telecomunicaciones quiere identificar a los clientes con alta probabilidad de cancelar su servicio (churn), pero solo le interesa actuar sobre aquellos que tienen un "Valor de Vida del Cliente" (CLV) alto para maximizar el retorno de inversión.
+
+Tu Misión:
+Escribe una función llamada analizar_prioridad_retencion(df, target_col, clv_col, threshold=0.7) que realice lo siguiente:
+1. Elimine cualquier fila donde la columna target_col tenga valores nulos.
+2. Convierte las variables categóricas del resto del DataFrame en variables numéricas usando One-Hot Encoding (pd.get_dummies con drop_first=True).
+3. Entrene un modelo de RandomForestClassifier (con random_state=42 y n_estimators=100) utilizando todo el conjunto de datos resultante.
+4. Obtenga las probabilidades de pertenecer a la clase 1 (cliente que se va) para cada registro usando predict_proba.
+5. Agregue una columna 'probabilidad_churn' con esos valores y una columna 'prioridad_alta' (booleana) que sea True si:
+   - La probabilidad_churn >= threshold.
+   - El valor en clv_col está por encima del percentil 80 de todos los clientes (usa .quantile(0.8)).
+6. Retorne el DataFrame que contenga únicamente a los clientes de prioridad_alta = True, ordenados de mayor a menor probabilidad_churn.

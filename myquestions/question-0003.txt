@@ -1,0 +1,10 @@
+El Problema:
+Un e-commerce quiere agrupar sus productos en 3 categorías de rotación basándose en el 'precio' y la 'cantidad_vendida'.
+
+Tu Misión:
+Escribe una función llamada segmentar_productos(df, columnas_features) que:
+1. Rellene los valores faltantes en las columnas indicadas en columnas_features con la mediana de cada columna.
+2. Aplique el algoritmo KMeans de sklearn con n_clusters=3 y random_state=42.
+3. Añada una columna llamada 'cluster' al DataFrame con las etiquetas obtenidas.
+4. Calcule el valor promedio de la columna 'precio' para cada cluster.
+5. Devuelva una tupla con: (El DataFrame con la columna cluster, y una Serie de pandas con los promedios del precio por cluster).
